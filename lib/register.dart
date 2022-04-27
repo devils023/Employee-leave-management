@@ -16,7 +16,7 @@ class _MyRegisterState extends State<MyRegister> {
             image: AssetImage('assets/register.png'), fit: BoxFit.cover),
       ),
       child: Scaffold(
-        backgroundColor: Colors.deepOrangeAccent,
+        backgroundColor: Colors.amber,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,

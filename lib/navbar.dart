@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:startup_namer/about_us.dart';
 import 'package:startup_namer/dashboard.dart';
 import 'package:startup_namer/login.dart';
 
@@ -46,14 +47,14 @@ class NavBar extends StatelessWidget {
               leading: Icon(Icons.favorite),
               title: Text('Log In'),
               onTap: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => HomeScreen())
+                  .push(MaterialPageRoute(builder: (context) => MyLogin())
               ),
           ),
           ListTile(
             leading: Icon(Icons.person),
             title: Text('About Us'),
             onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => HomeScreen()),
+              MaterialPageRoute(builder: (context) => AboutUs()),
             ),
           ),
 
