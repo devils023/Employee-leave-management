@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup_namer/login.dart';
 
 class MyRegister extends StatefulWidget {
   const MyRegister({Key? key}) : super(key: key);
@@ -8,6 +9,15 @@ class MyRegister extends StatefulWidget {
 }
 
 class _MyRegisterState extends State<MyRegister> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  void validate() {
+    //YAHA API CALL GARNU PARCHA//
+    if (_formKey.currentState!.validate()) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => MyLogin()));
+    }
+    ;
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,75 +51,94 @@ class _MyRegisterState extends State<MyRegister> {
                       margin: EdgeInsets.only(left: 35, right: 35),
                       child: Column(
                         children: [
-                          TextField(
-                            style: TextStyle(color: Colors.white),
+                          // TextField(
+                          //   style: TextStyle(color: Colors.white),
+                          //   decoration: InputDecoration(
+                          //       enabledBorder: OutlineInputBorder(
+                          //         borderRadius: BorderRadius.circular(10),
+                          //         borderSide: BorderSide(
+                          //           color: Colors.white,
+                          //         ),
+                          //       ),
+                          //       focusedBorder: OutlineInputBorder(
+                          //         borderRadius: BorderRadius.circular(10),
+                          //         borderSide: BorderSide(
+                          //           color: Colors.black,
+                          //         ),
+                          //       ),
+                          //       hintText: "Name",
+                          //       hintStyle: TextStyle(color: Colors.white),
+                          //       border: OutlineInputBorder(
+                          //         borderRadius: BorderRadius.circular(10),
+                          //       )),
+                          // ),
+                          TextFormField(
+                            style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                hintText: "Name",
-                                hintStyle: TextStyle(color: Colors.white),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )),
+                              fillColor: Colors.grey.shade100,
+                              filled: true,
+                              hintText: "Name",
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            validator: (String? value) {
+                              if (value == null) {
+                                return "this is required.";
+                              } else {
+                                return value.length <= 9
+                                    ? "Length must be greater than 9"
+                                    : null;
+                              }
+                            },
                           ),
                           SizedBox(
                             height: 30,
                           ),
-                          TextField(
-                            style: TextStyle(color: Colors.white),
+
+                          TextFormField(
+                            style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                hintText: "Email",
-                                hintStyle: TextStyle(color: Colors.white),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )),
+                              fillColor: Colors.grey.shade100,
+                              filled: true,
+                              hintText: "Email",
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            validator: (String? value) {
+                              if (value == null) {
+                                return "this is required.";
+                              } else {
+                                return value.length <= 9
+                                    ? "Length must be greater than 9"
+                                    : null;
+                              }
+                            },
                           ),
                           SizedBox(
                             height: 30,
                           ),
-                          TextField(
-                            style: TextStyle(color: Colors.white),
-                            obscureText: true,
+
+                          TextFormField(
+                            style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                hintText: "Password",
-                                hintStyle: TextStyle(color: Colors.white),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )),
+                              fillColor: Colors.grey.shade100,
+                              filled: true,
+                              hintText: "Password",
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            validator: (String? value) {
+                              if (value == null) {
+                                return "this is required.";
+                              } else {
+                                return value.length <= 9
+                                    ? "Length must be greater than 9"
+                                    : null;
+                              }
+                            },
                           ),
                           SizedBox(
                             height: 40,
@@ -129,7 +158,9 @@ class _MyRegisterState extends State<MyRegister> {
                                 backgroundColor: Color(0xff4c505b),
                                 child: IconButton(
                                     color: Colors.white,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                     validate();
+                                    },
                                     icon: Icon(
                                       Icons.arrow_forward,
                                     )),

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:startup_namer/about_us.dart';
 import 'package:startup_namer/dashboard.dart';
+import 'package:startup_namer/hr_policy.dart';
 import 'package:startup_namer/login.dart';
 
 class NavBar extends StatelessWidget {
@@ -18,7 +19,7 @@ class NavBar extends StatelessWidget {
               Container(
                   width: double.infinity,
                   height: 150,
-                  color: Colors.white,
+                  color: Colors.amber,
                   child: Image.asset(
                     "assets/images/logonew.png",
                     fit: BoxFit.cover,
@@ -44,11 +45,10 @@ class NavBar extends StatelessWidget {
           ),
 
           ListTile(
-              leading: Icon(Icons.favorite),
-              title: Text('Log In'),
-              onTap: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => MyLogin())
-              ),
+            leading: Icon(Icons.favorite),
+            title: Text('Log In'),
+            onTap: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => MyLogin())),
           ),
           ListTile(
             leading: Icon(Icons.person),
@@ -58,15 +58,16 @@ class NavBar extends StatelessWidget {
             ),
           ),
 
-          // ListTile(
-          //   leading: Icon(Icons.share),
-          //   title: Text('Compass'),
-          //   onTap:()=> Navigator.of(context).push(
-          //     MaterialPageRoute(builder: (contect)=> Compass(),),),
-          //
-          //
-          //   //onTap: () => null,
-          // ),
+          ListTile(
+            leading: Icon(Icons.share),
+            title: Text('Hr Policy'),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (contect) => HrPolicy(),
+              ),
+            ),
+            //onTap: () => null,
+          ),
 
           // Divider(),
           // ListTile(

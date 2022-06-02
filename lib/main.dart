@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:startup_namer/login.dart';
 import 'package:startup_namer/navbar.dart';
 
+import 'admin.dart';
+import 'admin_approve_reject.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -12,7 +15,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyLogin(),
+      home: Adminscreen(),
     ); //
   }
 }

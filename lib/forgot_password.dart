@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup_namer/login.dart';
 import 'package:startup_namer/register.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -17,7 +18,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             image: AssetImage('assets/register.png'), fit: BoxFit.cover),
       ),
       child: Scaffold(
-        backgroundColor: Colors.deepOrangeAccent,
+        backgroundColor: Colors.amber,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -90,28 +91,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           SizedBox(
                             height: 30,
                           ),
-                          // TextField(
-                          //   style: TextStyle(color: Colors.white),
-                          //   obscureText: true,
-                          //   decoration: InputDecoration(
-                          //       enabledBorder: OutlineInputBorder(
-                          //         borderRadius: BorderRadius.circular(10),
-                          //         borderSide: BorderSide(
-                          //           color: Colors.white,
-                          //         ),
-                          //       ),
-                          //       focusedBorder: OutlineInputBorder(
-                          //         borderRadius: BorderRadius.circular(10),
-                          //         borderSide: BorderSide(
-                          //           color: Colors.black,
-                          //         ),
-                          //       ),
-                          //       hintText: "Password",
-                          //       hintStyle: TextStyle(color: Colors.white),
-                          //       border: OutlineInputBorder(
-                          //         borderRadius: BorderRadius.circular(10),
-                          //       )),
-                          // ),
+
                           SizedBox(
                             height: 40,
                           ),
@@ -130,7 +110,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 backgroundColor: Color(0xff4c505b),
                                 child: IconButton(
                                     color: Colors.white,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => MyLogin()));
+                                    },
                                     icon: Icon(
                                       Icons.arrow_forward,
                                     )),
